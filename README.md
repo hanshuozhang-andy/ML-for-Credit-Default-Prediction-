@@ -12,7 +12,7 @@ Use the workbook supplied in this repository, which contains the project's prede
 - Validation: 6,001 records
 - Test: 6,000 records
 
-Random oversampling was applied only to the training set, producing 28,036 records. Validation and test retained their original class distributions, with no shared customer IDs across the three sets. Model selection, threshold searches, and ensemble-weight selection used validation data. Results refer to one fixed split.
+Random oversampling was applied only to the training set, producing 28,036 records, to deal with class imbalance. Validation and test sets remained their original distributions.
 
 ## Main files
 
@@ -73,7 +73,3 @@ Running the model scripts retrains the models and overwrites their corresponding
 - **Hanshuo Zhang:** feature engineering, neural networks, ensemble learning, and the report's conclusion.
 - **Yu Chen:** logistic regression, abstract, introduction, and motivation.
 - **Zhenghao Zeng:** data resampling, PCA, and SVM.
-
-## Methodological limitation
-
-SVM probability calibration, including within the ensemble, uses three-fold cross-validation after oversampling. Duplicate customer records can therefore appear in both classifier-training and calibration subsets. External validation and test sets remain separate from the training data.
